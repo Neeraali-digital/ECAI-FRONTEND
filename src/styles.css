@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b6bb0;
+  --secondary: #f58220;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  @apply bg-white text-slate-800 antialiased overflow-x-hidden;
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-premium;
+}
+
+.section-padding {
+  @apply py-20 px-6 max-w-7xl mx-auto;
+}
+
+.heading-xl {
+  @apply text-5xl md:text-7xl font-bold tracking-tight text-slate-900;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-5xl font-bold tracking-tight text-slate-900;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:brightness-110 active:scale-95 inline-flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:brightness-110 active:scale-95 inline-flex items-center justify-center;
+}
+
+.btn-outline {
+  @apply border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-primary hover:text-white active:scale-95 inline-flex items-center justify-center;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.modern-card {
+  @apply relative overflow-hidden rounded-3xl bg-white border border-slate-100 p-8 transition-all duration-500 hover:shadow-premium;
+}
