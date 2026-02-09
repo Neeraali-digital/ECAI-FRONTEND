@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-slate-50 pt-24 pb-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Membership Holders</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">A comprehensive list of our valued members.</p>
+    </div>
+
+    <!-- Optional: Add Search/Filter logic here in the future -->
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div *ngFor="let member of members" class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-slate-100">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="h-16 w-16 rounded-full overflow-hidden bg-slate-200 relative flex-shrink-0">
+             <!-- Placeholder avatar if no image -->
+             <div class="absolute inset-0 flex items-center justify-center text-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <!-- Actual image -->
+            <img [src]="member.image" [alt]="member.name" class="w-full h-full object-cover transition-opacity duration-500 opacity-0" (load)="extractImage($event)">
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-800 text-lg group-hover:text-primary transition-colors">{{ member.name }}</h3>
+            <span class="text-xs font-semibold px-2 py-1 rounded-full bg-blue-50 text-blue-600">{{ member.id }}</span>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-slate-100 flex justify-between items-center text-sm">
+          <span class="text-slate-500">Joined</span>
+          <span class="font-medium text-slate-700">{{ member.joinDate }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

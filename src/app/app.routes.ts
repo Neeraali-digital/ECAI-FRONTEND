@@ -57,6 +57,11 @@ export const routes: Routes = [
                 path: 'apply',
                 loadComponent: () => import('./pages/membership/apply/apply').then(m => m.Apply),
                 title: 'Apply Membership | ECAI'
+            },
+            {
+                path: 'holders',
+                loadComponent: () => import('./pages/membership/membership-holders/membership-holders').then(m => m.MembershipHolders),
+                title: 'Membership Holders | ECAI'
             }
         ]
     },
@@ -77,6 +82,21 @@ export const routes: Routes = [
                 path: 'exhibitor-registration',
                 loadComponent: () => import('./pages/expo/registration/registration').then(m => m.Registration),
                 title: 'Exhibitor Registration | ECAI'
+            }
+        ]
+    },
+    {
+        path: 'committee',
+        children: [
+            {
+                path: 'central',
+                loadComponent: () => import('./pages/committee/central-committee/central-committee').then(m => m.CentralCommittee),
+                title: 'Central Committee | ECAI'
+            },
+            {
+                path: 'state',
+                loadComponent: () => import('./pages/committee/state-committee/state-committee').then(m => m.StateCommittee),
+                title: 'State Committee | ECAI'
             }
         ]
     },
